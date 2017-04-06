@@ -1,0 +1,133 @@
+#notifi{
+    height: 64px;
+    position: fixed;
+    top: 25px;
+    left: -270px;
+    overflow: hidden;
+    z-index: 9999999999999;
+    width: auto;
+    perspective: 1000px;
+}
+
+#notifi.animation{
+    animation-fill-mode: forwards;
+    animation-name: notification;
+    animation-duration: 1s;
+}
+
+#notifi.animationRev{
+    animation-fill-mode: forwards;
+    animation-name: notificationRev;
+    animation-play-state: running;
+    animation-duration: 1s;
+}
+
+@keyframes notification {
+    0%   {left: -70px;}
+    30%  {left: 25px;}
+    100% {left: 25px;}
+}
+
+@keyframes notificationRev {
+    0%   {left: 25px;}
+    60%  {left: 25px;}
+    99% {left: -70px;}
+    100% {left: -270px;}
+}
+
+#notifi #text.animation{
+    animation-fill-mode: forwards;
+    animation-name: textNot;
+    animation-duration: 1s;
+}
+
+#notifi #text.animationRev{
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    animation-name: textNotRev;
+    animation-duration: 1s;
+}
+
+@keyframes textNot {
+    0%   {transform: rotateY(180deg);}
+    25%  {transform: rotateY(180deg);}
+    100% {transform: rotateY(0deg);}
+}
+
+@keyframes textNotRev {
+    0%   {transform: rotateY(0deg);}
+    65%  {transform: rotateY(180deg);}
+    100% {transform: rotateY(180deg);}
+}
+
+#notifi #type{
+    width: 64px;
+    float: left;
+    position: relative;
+    z-index: 9;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 64px;
+}
+
+#notifi .red {
+    background-color: #f7bcc5;
+    background-image: url("notifi/stop-icon.png");
+}
+
+#notifi .green {
+    background-color: #cff7bc;
+    background-image: url("notifi/done-icon.png");
+}
+
+#notifi .yellow {
+    background-color: #f7edbc;
+    background-image: url("notifi/alert-icon.png");
+}
+
+#notifi .blue {
+    background-color: #BCE5F7;
+    background-image: url("notifi/info-icon.png");
+}
+
+#notifi #text{
+    height: 64px;
+    float: left;
+    min-width: 20px;
+    width: auto;
+    background-color: white;
+    transform: rotateY(96deg);
+    padding-left: 40px;
+    padding-right: 40px;
+    transform-origin: left;
+}
+
+#notifi #text p{
+    font-family: 'LabradorAThin', sans-serif;
+    color: black;
+    font-size: 19px;
+    padding-top: 22px;
+    padding-bottom: 21px;
+}
+
+#notifi.darkskin #text p{
+    color: white;
+}
+
+#notifi.darkskin #text{
+    background-color: #1c2b36;
+}
+
+#notifi #text a{
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    font-family: 'LabradorABold', sans-serif;
+    color: rgba(0,0,0,0.3);
+    font-size: 19px;
+    cursor: pointer;
+}
+
+#notifi.darkskin #text a{
+    color: rgba(255,255,255,0.7);
+}
